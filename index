@@ -1,0 +1,22 @@
+<?php
+  include "config/koneksi.php";
+  include "rss.php";
+  $iden=mysql_fetch_array(mysql_query("SELECT * FROM identitas"));
+  header("location: $iden[url]"); 
+?>
+
+
+  <!-- <div class="single_blog_sidebar wow fadeInUp" style="margin-bottom:50px;">
+          <h1 style="font-weight:900;margin-top:0;font-size:20px;line-height:.8;color:#333;">TOPIK UTAMA</h1>
+            <ul class="featured_nav2 list-topik-khusus">
+              <?php
+              $liputan_khusus = mysql_query("SELECT sub_judul, topik FROM berita WHERE topik != '' GROUP BY topik");
+              while($row = mysql_fetch_array($liputan_khusus)){
+                echo "<li style='background: transparent;'>
+                  <i class='fa fa-hashtag' style='font-size:20px;margin-right:10px;color:#00a1a2'></i>
+                  <a style='color:#41454f;font-size:15px;display:inline-block;width:calc(100% - 50px);font-weight:bold;vertical-align:middle;' href='topik-$row[topik]'>$row[sub_judul]</a>
+                </li>";
+              } 
+              ?>
+            </ul>
+          </div> -->

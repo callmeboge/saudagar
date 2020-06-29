@@ -1,0 +1,7 @@
+color : #035680
+
+berita foto : max (1200)[GALLERY] (700)[COVER] (200)[COVER]
+berita : max (700)[COVER] min (200)[COVER]
+
+thumbnail *square: 120 
+          *rectangle: 85, 85

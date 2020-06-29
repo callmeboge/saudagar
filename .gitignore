@@ -1,0 +1,7 @@
+.remote-sync.json
+
+#exclude
+foto_*/
+img_*/
+redaktur/
+m/

@@ -1,0 +1,220 @@
+ <!-- <script>
+		var loadMore = true;
+		var page = 1;
+		$(window).scroll(function(){
+			var nearbottom = 100;
+			if(($(window).scrollTop()+nearbottom >= $(document).height()-$(window).height()) && loadMore)
+			{
+				loadMore = false;
+				if (page <= 20)
+				{
+					$.ajax({
+						url: 'more-web.php?kategori=&page='+page+'&urut='+$('li:last').attr('kode'),
+						beforeSend: function()
+						{
+							$('#more').show();
+						},
+						complete: function()
+						{
+							$('#more').hide();
+						},
+						success: function(result)
+						{
+							$('#daftar-artikel').append(result);
+							loadMore = true;
+						}
+					});
+				}
+				page++;
+			}
+		});
+  </script> -->
+
+	    <script>
+    $('#more_animasi').one('click', function(){
+      $(this).html('<div><i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="color:#00547f"></i><span style="color:#333;padding:7px 0;display:block;">Memuat&hellip;</span></div>');
+      $.ajax({
+        method: 'GET',
+        url: 'more-web.php',
+        data: {
+          urut: $('li[data-berita]:last-child').attr('data-berita'),
+          urut_foto: $('li[data-berita-foto]:nth-last-child(5)').attr('data-berita-foto')
+        },
+        success: function(html)
+        {
+          if(html)
+          {
+            $('#list-terkini-middle').append(html);
+            $('#more_animasi').html('<a id="more_indeks">INDEKS</a></a>');
+            $('.lazy').lazy();
+          }
+        }
+    })
+  })
+  </script>
+
+	//assets
+
+	<!-- <script type="application/ld+json">
+	{
+		"@context": "http://schema.org/",
+		"@type": "NewsArticle",
+		"headline": "<?php
+	if($d['judul'] !=''){
+		echo "$d[judul]";
+	}else{
+		echo "Kiblat Berita Islami - harianamanah.com";
+	}?>",
+		"datePublished": "<?php echo $d['tanggal']?>",
+		"description": "<?php
+	if($d['isi_berita'] != '')
+		echo desc($d['isi_berita']);
+	else
+		echo "Indeks berita islam terkini dari Dunia islam, Olahraga, Tekno, Ekonomi, Jazirah, politik, halal destination, Islamic View, berita haji dan umroh dan international";
+	?>",
+		"image": {
+			"@type": "ImageObject",
+			"height": "350",
+			"width": "595",
+			"url": "<?php
+	if($d['gambar']!=''){
+		echo "http://harianamanah.com/foto_berita/$d[gambar]";
+	}else{
+		echo "http://harianamanah.com/images/amanah.jpg";
+	}
+	?>"
+		},
+		"author": "harianamanah",
+		"publisher": {
+			"@type": "Organization",
+			"logo": {
+				"@type": "ImageObject",
+				"url": "http://harianamanah.com/logo/assets/pp_ff.png"
+			},
+			"name": "harianamanah"
+		}
+	}
+	</script> -->
+
+	WEB
+  <!-- <script type="application/ld+json">
+  {
+    "@context": "http://schema.org/",
+    "@type": "NewsArticle",
+    "headline": "<?php
+      if($d['judul'] !=''){
+        echo "$d[judul]";
+      }else{
+        echo "Kiblat Berita Islami - harianamanah.com";
+      }?>",
+    "datePublished": "<?= $d['tanggal']?>",
+    "description": "<?php
+  if($d['isi_berita'] != '')
+    echo desc($d['isi_berita']);
+  else
+    echo "Indeks berita islam terkini dari Dunia islam, Olahraga, Tekno, Ekonomi, Jazirah, politik, halal destination, Islamic View, berita haji dan umroh dan international";
+  ?>",
+    "image": {
+      "@type": "ImageObject",
+      "height": "315",
+      "width": "600",
+      "url": "<?php
+  if($d['gambar']!=''){
+    echo "http://harianamanah.com/foto_berita/$d[gambar]";
+  }else{
+    echo "http://harianamanah.com/images/amanah.jpg";
+  }
+  ?>"
+    },
+    "author": "harianamanah",
+    "publisher": {
+      "@type": "Organization",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "http://harianamanah.com/logo/assets/pp_ff.png"
+      },
+      "name": "harianamanah"
+    }
+  }
+  </script> -->
+
+	$num_rows = mysql_num_rows($artikel);
+if($num_rows <> 0){
+?>
+<!-- <section class="daftar-artikel">
+<a href='https://play.google.com/store/apps/details?id=com.abugroup.abutours&hl=in'  title="AbuTours.com">
+  <article class= 'artikle' >
+    <div class='list-picture'>
+      <img class='picture' src='assets/abutours.png' />
+    </div>
+    <div class='artikle-text-1'>
+      <p class='link-kategori'>Abutours.com</p>
+      <div class="berita"  style="margin-bottom: 15px;">
+        <p>Aplikasi Abutours menawarkan kemudahan bagi calon haji dalam melakukan pemesanan kursi</p>
+      </div>
+      <p class="tag-sponsored">Sponsored</p>
+      <p class="instal">INSTALL</p>
+    </div>
+  </article>
+</a>
+</section>
+<section class="daftar-artikel">
+  <a href='https://play.google.com/store/apps/details?id=com.koran.harian.amanah'  title="Harian Amanah">
+    <article class= 'artikle' >
+      <div class='list-picture'>
+        <img class='picture' src='assets/ic_launcher.png' />
+      </div>
+      <div class='artikle-text-1'>
+      <p class='link-kategori'>Aplikasi Harian Amanah</p>
+      <div class="berita"  style="margin-bottom: 15px;">
+        <p>Download Aplikasi Harian Amanah</p>
+      </div>
+      <p class="tag-sponsored"></p>
+      <p class="instal">INSTALL</p>
+      </div>
+    </article>
+  </a>
+</section> -->
+<?php } ?>
+
+ else:
+  $x = 1;
+	$artikel=mysql_query("SELECT * FROM berita, menu WHERE id_menu = id_kategori AND id_berita < '$_GET[urut]' ORDER BY id_berita DESC LIMIT 5");
+	while($q=mysql_fetch_array($artikel))
+	{
+    $tgl = tgl_indo($q['tanggal']);
+    $jam = trans_jam($q['jam']);
+    if($x%5 == 0):
+      $inilah = mysql_query("SELECT * FROM berita, menu WHERE id_menu = id_kategori AND jenis_berita = 'foto' AND id_berita < '$_GET[urut_foto]' ORDER BY id_berita DESC LIMIT 1");
+      while($foto=mysql_fetch_array($inilah)):
+      echo "<article class= 'artikle' >
+						<div class='list-picture'>
+							<a href='".$url->url_baca($foto[menu_dari], $foto[id_berita], $foto[judul_seo])."'>
+								<img class='picture lazy' src='".$url->url_base_image('R')."' data-src='".$url->url_article_img($foto[gambar])."' alt='$foto[judul]' style='width:100%;height:auto;object-fit:cover;'>
+							</a>
+						</div>
+						<div class='artikle-text' data-target='update-foto' kode='$foto[id_berita]' style='width:100%;padding:0;margin-top:10px;'>
+							<p class='waktu-berita'>$tgl - $jam </p>
+							<a href='".$url->url_baca($foto[menu_dari], $foto[id_berita], $foto[judul_seo])."' class='berita' title='$foto[judul]'>$foto[judul]</a>
+							<!-- <a href='#' class='link-kategori'>$foto[nama_kategori]</a> -->
+						</div>
+					</article>";
+            $_GET['urut_foto'] = $foto['id_berita'];
+      endwhile;
+    else:
+      echo "
+      <article class= 'artikle' >
+        <div class='list-picture'>
+          <a href='".$url->url_baca($q[menu_dari], $q[id_berita], $q[judul_seo])."'>
+            <img class='picture lazy' src='".$url->url_base_image('S')."' data-src='".$url->url_article_img($q[gambar])."' alt='$q[judul]'/>
+          </a>
+        </div>
+        <div class='artikle-text' data-target='update' kode='$q[id_berita]'>
+          <p class='waktu-berita'>$tgl - $jam </p>
+          <a href='".$url->url_baca($q[menu_dari], $q[id_berita], $q[judul_seo])."' class='berita' title='$q[judul]'>$q[judul]</a>
+          <!-- <a href='#' class='link-kategori'>$q[nama_kategori]</a> -->
+        </div>
+      </article>";   
+    endif;
+    $x++;  
+  }

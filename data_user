@@ -1,0 +1,49 @@
+UPDATE berita
+SET username = '2'
+WHERE username = 'aan';
+
+UPDATE berita
+SET username = '5'
+WHERE username = 'juminah';
+
+UPDATE berita
+SET username = '4'
+WHERE username = 'abrar';
+
+UPDATE berita
+SET username = '6'
+WHERE username = 'nur';
+
+
+UPDATE berita
+SET username = '7'
+WHERE username = 'irfan';
+
+
+UPDATE berita
+SET username = '9'
+WHERE username = 'yudi';
+
+
+UPDATE berita
+SET username = '10'
+WHERE username = 'rahman';
+
+UPDATE berita
+SET username = '11'
+WHERE username = 'rahma';
+
+
+UPDATE berita
+SET username = '19'
+WHERE username = 'alifahmi';
+
+
+UPDATE berita
+SET username = '21'
+WHERE username = 'suthe';
+
+
+UPDATE berita
+SET username = '22'
+WHERE username = 'amrinjegger';

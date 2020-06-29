@@ -1,0 +1,32 @@
+<IfModule mod_rewrite.c>
+  ErrorDocument 404 /
+  Options All -Indexes
+
+  #mengaktifkan mode tulisulang
+  RewriteEngine on
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  # RewriteRule ^foto-(.*)\.html$ media.php?module=detailfoto&judul=$1 [L]
+  # RewriteRule ^video-(.*)$ media.php?module=detailvideo&judul=$1 [L]
+  # RewriteRule ^not-found$ media.php?module=notfound&id=$1 [L]
+  # RewriteRule ^lombamewarnaiislami$ media.php?module=warnaislami [L]
+  RewriteRule ^tag/(.*)$ media.php?module=detailtag&tag=$1 [QSA,L]
+  RewriteRule ^search$ media.php?module=hasilcari [QSA,L]
+  RewriteRule ^sitemap$ media.php?module=sitemap [L]
+  RewriteRule ^foto$ media.php?module=foto [L]
+  RewriteRule ^pilkada/(.*)$ media.php?module=pilkd-daerah&daerah_pilkada=$1 [L]
+  RewriteRule ^indeks$ media.php?module=indeks [QSA,L]
+  RewriteRule ^halaman/([a-zA-Z-]+)$ media.php?module=halamanstatis&redaksi=$1 [L]
+  RewriteRule ^regional/([a-zA-Z]+)$ media.php?module=regional&menu=$1 [L]
+  # RewriteRule ^regional/([a-zA-Z]+)/([a-zA-Z-]+)$ media.php?module=regional&district=$1&subdistrict=$2 [L]
+  RewriteRule ^([a-zA-Z]+)$ media.php?module=main&menu=$1 [L]
+  RewriteRule ^([a-zA-Z]+)/indeks$ media.php?module=indeks&menu=$1 [QSA,L]
+  RewriteRule ^([a-zA-Z]+)/([a-zA-Z-]+)$ media.php?module=detailkategori&menu=$1&id=$2 [QSA,L]
+  RewriteRule ^([a-zA-Z]+)/baca/([0-9]+)/([0-9a-z-]+)$ media.php?module=detailberita&menu=$1&id_berita=$2&judul=$3 [L]
+
+  #Clean URL
+  RewriteRule ^$ media.php?module=home [L]
+  # RewriteRule ^(.*)$ media.php?module=main&menu=$1 [L]
+  # RewriteRule ^(.*)\.html$ 
+  # RewriteRule ^([^\.]+)$ $1.html [NC,L]
+</IfModule>
