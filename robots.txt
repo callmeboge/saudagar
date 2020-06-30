@@ -1,4 +1,5 @@
 User-agent: *
-Allow: /
-Allow: /sitemap.htm
-Sitemap: https://www.saudagarnews.id/sitemap.xml
+Disallow: /index.html
+Disallow: /application
+Disallow: /bonfire
+Disallow: /public

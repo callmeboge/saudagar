@@ -1,0 +1,33 @@
+<IfModule mod_rewrite.c>
+  # ErrorDocument 404 http://harianamanah.com/alamatpalsu.html
+  Options All -Indexes
+
+  RewriteEngine on
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+
+  # RewriteRule ^video-(.*)$ template.php?module=detailvideo&judul=$1 [L]
+  # RewriteRule ^pilkada/(.*)$ template.php?module=pilkd-daerah&daerah_pilkada=$1 [L]
+  # RewriteRule ^not-found$ template.php?module=notfound&id=$1 [L]
+
+  RewriteRule ^search? template.php?module=hasilcari&searchmode=all [QSA,L]
+  RewriteRule ^tag/(.*) template.php?module=hasiltag&tag=$1 [QSA,L]
+  RewriteRule ^video$ template.php?module=video [L]
+  RewriteRule ^foto$ template.php?module=foto [L]
+  RewriteRule ^googlec4c1ba331ed90473\.html$ googlec4c1ba331ed90473.html [L]
+  RewriteRule ^halaman/([a-zA-Z-]+)$ template.php?module=halaman-statis&judulseo=$1 [L]
+  RewriteRule ^berita-utama$ template.php?module=main&jn=berita-utama [L]
+  RewriteRule ^popular$ template.php?module=main&jn=popular [L]
+  RewriteRule ^terkini$ template.php?module=main&jn=terkini [L]
+  RewriteRule ^rekomendasi$ template.php?module=main&jn=rekomendasi [L]
+  RewriteRule ^regional/([a-zA-Z-]+)$ template.php?module=regional&district=$1 [L]
+  RewriteRule ^([a-zA-Z]+)$ template.php?module=menu&jn=$1 [L]
+  RewriteRule ^([a-zA-Z]+)/([a-zA-Z-]+)$ template.php?module=detailkategori&menu=$1&id=$2 [L]
+  RewriteRule ^([a-zA-Z]+)/baca/([0-9]+)/([0-9a-z-]+)$ template.php?module=detailberita&menu=$1&id_berita=$2&judul=$3 [L]
+
+  #Clean URL
+  RewriteRule ^$ template.php?module=home [L]
+  # RewriteRule ^(.*)\.html$ template.php?module=menu&jn=$1 [L]
+  # RewriteRule ^([^\.]+)$ $1.html [NC,L]
+  # RewriteRule ^(.*)$ template.php?module=home [L]
+</IfModule>
