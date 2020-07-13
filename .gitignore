@@ -61,3 +61,14 @@ vendor/*
 
 # Ignore any sparks that have been loaded
 sparks/*
+
+# Ignore any images inside assets folder
+public/assets/images/foto_*
+public/assets/images/img_*
+
+# Ignore m/ directory for mobile module area.
+m/
+m_bak/
+
+# Ignore redaktur directory for dashboard module area.
+redaktur/
