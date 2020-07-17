@@ -1,3 +1,63 @@
+<<<<<<< HEAD
+=======
+<?php
+
+Assets::add_css(array(
+    base_url('assets/favicon/favicon.jpg'),
+    base_url('css/bootstrap.min.css'),
+    base_url('font-awesome-4.7.0/css/font-awesome.min.css'),
+    base_url('https://fonts.googleapis.com/css?family=Rubik:400,500'),
+    base_url('css/lightgallery.min.css?v=1.07'),
+    base_url('css/structure.css?v=1.07'),
+    base_url('css/style.css?v=1.07'),
+    base_url('css/new.css?v=1.07')
+  ));
+
+Assets::add_js(array(
+    base_url('js/jquery-2.1.1.js'),
+    base_url('js/bootstrap.min.js'),
+    base_url('js/jquery.lazy.min.js'),
+    base_url('js/jquery.lazy.plugins.min.js'),
+    base_url('js/jquery-scrolltofixed-min.js'),
+    base_url('js/lightgallery-all.min.js?v=1.07'),
+    base_url('js/script.js?v=1.07'),
+));
+
+// Inline script for Google Adsense tag
+$googleAdsTag = '<!-- Google Adsense tag -->
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({
+  google_ad_client: "ca-pub-4290882175389422",
+  enable_page_level_ads: true
+});
+</script>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({
+  google_ad_client: "ca-pub-5843554218260221",
+  enable_page_level_ads: true
+});
+</script>';
+
+// Inline script for Google Analytics tag
+$googleAnalyticTag = '<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-98715886-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag("js", new Date());
+
+  gtag("config", "UA-118291711-1");
+  gtag("config", "UA-98715886-2");
+</script>';
+
+Assets::add_js($googleAdsTag, 'inline');
+Assets::add_js($googleAnalyticTag, 'inline');
+
+?>
+>>>>>>> b3dc2be6e291ca866da318c748b02e0c5f388f04
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="Content-Type" content="text/html">
@@ -40,6 +100,7 @@
   <meta name="twitter:image" content="<?= $meta->meta_image($d['gambar'])?>">
 
   <!-- Bootstrap Core CSS -->
+<<<<<<< HEAD
   <link rel="shortcut icon" href="<?= SITE_URL. "assets/favicon/favicon.jpg"?>">
   <link rel="stylesheet" href="<?= SITE_URL. "css/bootstrap.min.css" ?>" type="text/css">
   <link rel="stylesheet" href="<?= SITE_URL. "font-awesome-4.7.0/css/font-awesome.min.css" ?>"  type="text/css">
@@ -63,6 +124,19 @@
  
   </script>
 
+=======
+  <?php 
+  
+    echo Assets::css(null, 'screen', true); 
+  
+  ?>
+  <!-- JS -->
+  <?php
+  
+    echo Assets::js();
+
+  ?>
+>>>>>>> b3dc2be6e291ca866da318c748b02e0c5f388f04
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
