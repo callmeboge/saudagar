@@ -1,26 +1,12 @@
-<<<<<<< HEAD
-=======
 <?php
 
 Assets::add_css(array(
-    base_url('assets/favicon/favicon.jpg'),
-    base_url('css/bootstrap.min.css'),
-    base_url('font-awesome-4.7.0/css/font-awesome.min.css'),
-    base_url('https://fonts.googleapis.com/css?family=Rubik:400,500'),
-    base_url('css/lightgallery.min.css?v=1.07'),
-    base_url('css/structure.css?v=1.07'),
-    base_url('css/style.css?v=1.07'),
-    base_url('css/new.css?v=1.07')
+	'bootstrap.min.css',
   ));
 
 Assets::add_js(array(
-    base_url('js/jquery-2.1.1.js'),
-    base_url('js/bootstrap.min.js'),
-    base_url('js/jquery.lazy.min.js'),
-    base_url('js/jquery.lazy.plugins.min.js'),
-    base_url('js/jquery-scrolltofixed-min.js'),
-    base_url('js/lightgallery-all.min.js?v=1.07'),
-    base_url('js/script.js?v=1.07'),
+    'jquery-2.1.1.js',
+    'js/bootstrap.min.js',
 ));
 
 // Inline script for Google Adsense tag
@@ -57,7 +43,6 @@ Assets::add_js($googleAdsTag, 'inline');
 Assets::add_js($googleAnalyticTag, 'inline');
 
 ?>
->>>>>>> b3dc2be6e291ca866da318c748b02e0c5f388f04
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="Content-Type" content="text/html">
@@ -99,32 +84,9 @@ Assets::add_js($googleAnalyticTag, 'inline');
   <meta name="twitter:description" content="<?= $meta->meta_description($d['isi_berita']); ?>">
   <meta name="twitter:image" content="<?= $meta->meta_image($d['gambar'])?>">
 
-  <!-- Bootstrap Core CSS -->
-<<<<<<< HEAD
-  <link rel="shortcut icon" href="<?= SITE_URL. "assets/favicon/favicon.jpg"?>">
-  <link rel="stylesheet" href="<?= SITE_URL. "css/bootstrap.min.css" ?>" type="text/css">
-  <link rel="stylesheet" href="<?= SITE_URL. "font-awesome-4.7.0/css/font-awesome.min.css" ?>"  type="text/css">
-  <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,700,900"> -->
-  <!-- <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600" rel="stylesheet"> -->
-  <link href="https://fonts.googleapis.com/css?family=Rubik:400,500" rel="stylesheet">
-  <link rel="stylesheet" href="<?= SITE_URL. "css/lightgallery.min.css?v=1.07" ?>">
-  <link rel="stylesheet" href="<?= SITE_URL. "css/structure.css?v=1.07" ?>">
-  <link rel="stylesheet" href="<?= SITE_URL. "css/style.css?v=1.07" ?>">
-  <link rel="stylesheet" href="<?= SITE_URL. "css/new.css?v=1.07" ?>">
+  <!-- Bootstrap Core CSS --> 
   <!-- JS -->
   <!-- jQuery and Modernizr-->
-  <script src="<?= SITE_URL. "js/jquery-2.1.1.js" ?> "></script>
-  <script src="<?= SITE_URL. "js/bootstrap.min.js" ?> "></script>
-  <script src="<?= SITE_URL. "js/jquery.lazy.min.js" ?> "></script>
-  <script src="<?= SITE_URL. "js/jquery.lazy.plugins.min.js" ?>"></script>
-  <script src="<?= SITE_URL. "js/jquery-scrolltofixed-min.js" ?>"></script>
-  <script src="<?= SITE_URL. "js/lightgallery-all.min.js?v=1.07" ?>"></script>
-  <script src="<?= SITE_URL. "js/script.js?v=1.07" ?> "></script>
-  <script>
- 
-  </script>
-
-=======
   <?php 
   
     echo Assets::css(null, 'screen', true); 
@@ -136,16 +98,10 @@ Assets::add_js($googleAnalyticTag, 'inline');
     echo Assets::js();
 
   ?>
->>>>>>> b3dc2be6e291ca866da318c748b02e0c5f388f04
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
       <script src="js/html5shiv.js"></script>
       <script src="js/respond.min.js"></script>
   <![endif]-->
-<?php
-  // include_once "heatmap.php";
-  include_once "analyticstracking.php";
-  include_once "adsense.php";
-  ?>
 </head>
