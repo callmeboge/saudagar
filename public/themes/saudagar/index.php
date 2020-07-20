@@ -2,17 +2,17 @@
 <html>
 <?php
 
-  echo Template::themeView('_header');
+  echo Template::themeView('header');
 
 ?>
 <body>
 <?php
 
-    // echo Template::themeView('_sitenav'); 
+    echo Template::themeView('sitenav'); 
 
     echo isset($content) ? $content : Template::content();
     
-    // echo Template::themeView('_footer');
+    echo Template::themeView('footer');
 
 ?>
 </body>
